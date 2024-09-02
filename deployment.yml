@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spring-boot-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: spring-stack-project
+  template:
+    metadata:
+      labels:
+        app: spring-stack-project
+    spec:
+      containers:
+        - name: spring-boot-container
+          image: furkankayam/spring-stack-project:latest
+          ports:
+            - containerPort: 8080
