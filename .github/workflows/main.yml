@@ -5,8 +5,6 @@ on:
     branches: [master]
 
 jobs:
-  env:
-    PROJECT_NAME: spring-stack-project
   test:
     name: Unit Test
     runs-on: ubuntu-latest
@@ -73,5 +71,5 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: |
-            ${{ secrets.DOCKER_USERNAME }}/${{ env.PROJECT_NAME }}:${{ github.sha }}
-            ${{ secrets.DOCKER_USERNAME }}/${{ env.PROJECT_NAME }}:latest
+            ${{ secrets.DOCKER_USERNAME }}/spring-stack-project:${{ github.sha }}
+            ${{ secrets.DOCKER_USERNAME }}/spring-stack-project:latest
